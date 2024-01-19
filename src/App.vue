@@ -10,7 +10,13 @@ const urlPort = `${import.meta.env.VITE_API_PORT}`
 const addData = async () => {
   data.value.push("Test")
   console.log(`http://${urlIp}:${urlPort}/spreads`);
-  const apiData = await fetch(`http://${urlIp}:${urlPort}/spreads`)
+  const apiData = await fetch(`http://${urlIp}:${urlPort}/spreads`, {
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      'Access-Control-Allow-Origin': '*',
+    }
+  })
   
   console.log(apiData);
 }
