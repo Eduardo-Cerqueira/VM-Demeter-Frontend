@@ -4,8 +4,10 @@ import { ref } from 'vue';
 
 const data = ref([])
 
-const addData = () => {
+const addData = async () => {
   data.value.push("Test")
+  const apiData = await fetch("http://192.168.56.102:8000/spreads")
+  console.log(await apiData);
 }
 </script>
 
