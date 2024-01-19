@@ -12,9 +12,9 @@ const addData = async () => {
   console.log(`http://${urlIp}:${urlPort}/spreads`);
   const apiData = await fetch(`http://${urlIp}:${urlPort}/spreads`, {
     method: "GET",
+    mode: "no-cors",
     headers: {
-      'Content-Type': 'application/json;charset=UTF-8',
-      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
     }
   })
   
