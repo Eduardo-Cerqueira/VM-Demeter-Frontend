@@ -4,10 +4,15 @@ import { ref } from 'vue';
 
 const data = ref([])
 
+const urlIp = `${import.meta.env.VITE_API_IP}`
+const urlPort = `${import.meta.env.VITE_API_PORT}`
+
 const addData = async () => {
   data.value.push("Test")
-  const apiData = await fetch("http://192.168.56.102:8000/spreads")
-  console.log(await apiData);
+  console.log(`http://${urlIp}:${urlPort}/spreads`);
+  const apiData = await fetch(`http://${urlIp}:${urlPort}/spreads`)
+  
+  console.log(apiData);
 }
 </script>
 
